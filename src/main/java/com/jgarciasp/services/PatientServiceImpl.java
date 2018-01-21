@@ -1,5 +1,6 @@
 package com.jgarciasp.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.dozer.DozerBeanMapper;
@@ -15,10 +16,14 @@ public class PatientServiceImpl implements PatientService {
 	@Autowired
 	private PatientDAO patientDAO;
 	
+	@Autowired
+	private DozerBeanMapper dozer;
+	
 	@Override
 	public List<PatientDTO> findAll() {
-//		return dozer.map(patientDAO.findAll(), List<PatientDTO>);
-		return null;
+		List<PatientDTO> result = new ArrayList<PatientDTO>();
+		this.patientDAO.findAll().forEach( (p) -> result.add(dozer.map(p, PatientDTO.class)));
+		return result;
 	}
 
 } // public class PatientServiceImpl implements PatientService
