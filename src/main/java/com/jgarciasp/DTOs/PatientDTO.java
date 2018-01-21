@@ -9,11 +9,11 @@ public class PatientDTO implements Serializable {
 
 	private static final long serialVersionUID = -4583226050350082915L;
 
-	private PatientDTO() {
+	public PatientDTO() {
 		super();
 	}
 	
-	private PatientDTO( Integer id, String name ) {
+	public PatientDTO( Integer id, String name ) {
 		super();
 		this.id = id;
 		this.name = name;

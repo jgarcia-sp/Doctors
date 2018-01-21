@@ -25,5 +25,11 @@ public class PatientServiceImpl implements PatientService {
 		this.patientDAO.findAll().forEach( (p) -> result.add(dozer.map(p, PatientDTO.class)));
 		return result;
 	}
+	
+	public List<PatientDTO> findAll( Integer page, Integer size ) {
+		List<PatientDTO> result = new ArrayList<PatientDTO>();
+		this.patientDAO.findAll().forEach( (p) -> result.add(dozer.map(p, PatientDTO.class)));
+		return result;
+	}
 
 } // public class PatientServiceImpl implements PatientService
