@@ -1,8 +1,8 @@
-package services;
+package com.jgarciasp.services;
 
 import java.util.List;
 
-import DTOs.PatientDTO;
+import com.jgarciasp.DTOs.PatientDTO;
 
 public interface PatientService {
 	

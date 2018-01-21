@@ -1,4 +1,4 @@
-package DTOs;
+package com.jgarciasp.DTOs;
 
 import java.io.Serializable;
 
