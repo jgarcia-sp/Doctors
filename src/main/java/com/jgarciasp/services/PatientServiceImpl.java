@@ -35,8 +35,8 @@ public class PatientServiceImpl implements PatientService {
 	}
 	
 	@Override
-	public PatientDTO findById ( Integer id ) {
-		return dozer.map(patientDAO.findOne(id), PatientDTO.class);
+	public PatientDTO findByPatient_Id ( Integer patient_id ) {
+		return dozer.map(patientDAO.findOne(patient_id), PatientDTO.class);
 	}
 
 	@Override
@@ -50,8 +50,8 @@ public class PatientServiceImpl implements PatientService {
 	}
 
 	@Override
-	public void delete(Integer id) {
-		patientDAO.delete(id);
+	public void delete(Integer patient_id) {
+		patientDAO.delete(patient_id);
 	}
 	
 } // public class PatientServiceImpl implements PatientService

@@ -30,9 +30,9 @@ public class PatientController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public PatientDTO findOne(@PathVariable("id") Integer id) {
-		log.info(String.format("Recuperando al paciente con id %s", id));
-		return patientService.findById(id);
+	public PatientDTO findOne(@PathVariable("id") Integer patient_id) {
+		log.info(String.format("Recuperando al paciente con id %s", patient_id));
+		return patientService.findByPatient_Id(patient_id);
 	}
 	
 	@RequestMapping(value = "/create", method = { RequestMethod.POST })
@@ -42,16 +42,16 @@ public class PatientController {
 	}
 	
 	@RequestMapping(value = "/update/{id}", method = { RequestMethod.PUT })
-	public void update(@PathVariable("id") Integer id, @RequestBody PatientDTO patient) {
+	public void update(@PathVariable("id") Integer patient_id, @RequestBody PatientDTO patient) {
 		log.info(String.format("Modificando al paciente: %s", patient));
-		patient.setId(id);
+		patient.setPatient_id(patient_id);
 		patientService.update(patient);
 	}
 	
 	@RequestMapping(value = "/delete/{id}", method = { RequestMethod.DELETE })
-	public void delete(@PathVariable("id") Integer id) {
-		log.info(String.format("Eliminando al paciente con id %s", id));
-		patientService.delete(id);
+	public void delete(@PathVariable("id") Integer patient_id) {
+		log.info(String.format("Eliminando al paciente con id %s", patient_id));
+		patientService.delete(patient_id);
 	}
 
 } // public class PatientController 

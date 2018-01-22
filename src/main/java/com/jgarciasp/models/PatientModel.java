@@ -19,12 +19,12 @@ public class PatientModel implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private Integer id;
+	private Integer patient_id;
 	
 	@Column(nullable = false)
-	private String name;
+	private String patient_name;
 	
 	@Column(unique = true)
-	private String email;
+	private String patient_email;
 	
 } // public class Patient implements Serializable 
