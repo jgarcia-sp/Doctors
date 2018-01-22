@@ -1,0 +1,11 @@
+Si Spring utiliza el Singleton, como podemos tener mas de una instancia de alguna clase que necesitemos. Una lista de pacientes tendra enlaces a la misma instancia?
+
+Que ponemos como indice para recuperar a un paciente sin dar a conocer el id que utiliza la base de datos realmente?
+
+He usado el archivo data.sql para inicializar mi base de datos. Que puedo usar para desacoplar la inicializacion de la base de datos de SQL? Si quiero usar Mongo, como lo haria?
+
+Como se usan los DTOs? Como construimos DTOs para que se reflejen con los modelos que tenemos en nuestra BD?
+
+Como controlamos los permisos? Como nos aseguramos de que actulizamos o borramos pacientes a los que tenemos acceso?
+
+

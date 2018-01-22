@@ -36,14 +36,22 @@ public class PatientServiceImpl implements PatientService {
 	
 	@Override
 	public PatientDTO findById ( Integer id ) {
-		return dozer.map(patientDAO.findById(id), PatientDTO.class);
+		return dozer.map(patientDAO.findOne(id), PatientDTO.class);
 	}
 
-//	@Override
-//	public PatientDTO create(PatientDTO patient) {
-//		return dozer.map(patientDAO.create(dozer.map(patient, Patient.class)), PatientDTO.class);
-//	}
-	
-	
+	@Override
+	public PatientDTO create(PatientDTO patient) {
+		return dozer.map(patientDAO.save(dozer.map(patient, PatientModel.class)), PatientDTO.class);
+	}
 
+	@Override
+	public void update(PatientDTO patient) {
+		patientDAO.save(dozer.map(patient, PatientModel.class));
+	}
+
+	@Override
+	public void delete(Integer id) {
+		patientDAO.delete(id);
+	}
+	
 } // public class PatientServiceImpl implements PatientService

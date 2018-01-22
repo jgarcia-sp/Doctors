@@ -35,10 +35,23 @@ public class PatientController {
 		return patientService.findById(id);
 	}
 	
-//	@RequestMapping(method = { RequestMethod.POST })
-//	public PatientDTO create(@RequestBody PatientDTO patient) {
-//		log.info(String.format("Creando al paciente: %s", patient));
-//		return patientService.create(patient);
-//	}
+	@RequestMapping(value = "/create", method = { RequestMethod.POST })
+	public PatientDTO create(@RequestBody PatientDTO patient) {
+		log.info(String.format("Creando al paciente: %s", patient));
+		return patientService.create(patient);
+	}
+	
+	@RequestMapping(value = "/update/{id}", method = { RequestMethod.PUT })
+	public void update(@PathVariable("id") Integer id, @RequestBody PatientDTO patient) {
+		log.info(String.format("Modificando al paciente: %s", patient));
+		patient.setId(id);
+		patientService.update(patient);
+	}
+	
+	@RequestMapping(value = "/delete/{id}", method = { RequestMethod.DELETE })
+	public void delete(@PathVariable("id") Integer id) {
+		log.info(String.format("Eliminando al paciente con id %s", id));
+		patientService.delete(id);
+	}
 
 } // public class PatientController 

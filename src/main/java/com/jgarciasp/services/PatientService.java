@@ -12,6 +12,10 @@ public interface PatientService {
 	
 	public PatientDTO findById( Integer id );
 	
-//	public PatientDTO create( PatientDTO patient );
+	public PatientDTO create( PatientDTO patient );
+	
+	public void update ( PatientDTO patient );
+	
+	public void delete ( Integer id );
 
 } // public interface PatientService 

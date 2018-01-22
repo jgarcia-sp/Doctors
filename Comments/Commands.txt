@@ -1,0 +1,43 @@
++ URL to access the application: (Using a GET Method)
+
+http://localhost:8080
+
+
+
++ URL to obtain the full list of patients: (Using a GET Method)
+
+http://localhost:8080/patient
+
+
+
++ UR to obtain the details of the patient with id = 1: (Using a GET Method)
+
+http://localhost:8080/patient/1
+
+
+
++ URL to create a new patient called testPatient: (Using a POST Method)
+
+http://localhost:8080/patient/create
+
+	- Add a Body in PostMan of type Raw with JSON formatting and put the following:
+
+{"name":"testPatient","email":"testMail@test.com"}
+
+
+
++ URL to update the data from patient with id = 1: (Using a PUT Method)
+
+http://localhost:8080/patient/update/1
+
+	- Add a Body in PostMan of type Raw with JSON formatting and put the following:
+
+{"name":"testPatient","email":"testMail@test.com"}
+
+
+
++ URL to delete a patient instance with id = 1: (Using a DELETE Method)
+
+http://localhost:8080/patient/delete/1
+
+
