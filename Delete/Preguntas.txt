@@ -1,0 +1,4 @@
+Si Spring utiliza el Singleton, como podemos tener mas de una instancia de alguna clase que necesitemos. Una lista de pacientes tendra enlaces a la misma instancia?
+
+
+Que ponemos como indice para recuperar a un paciente sin dar a conocer el id que utiliza la base de datos realmente?

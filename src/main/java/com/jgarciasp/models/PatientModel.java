@@ -6,12 +6,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 @Entity
 @Data
-public class Patient implements Serializable {
+@Table(name="Patient")
+public class PatientModel implements Serializable {
 
 	private static final long serialVersionUID = 1823974002962341154L;
 
@@ -21,5 +23,8 @@ public class Patient implements Serializable {
 	
 	@Column(nullable = false)
 	private String name;
+	
+	@Column(unique = true)
+	private String email;
 	
 } // public class Patient implements Serializable 

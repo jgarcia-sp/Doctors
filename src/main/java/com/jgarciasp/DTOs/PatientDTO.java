@@ -13,14 +13,17 @@ public class PatientDTO implements Serializable {
 		super();
 	}
 	
-	public PatientDTO( Integer id, String name ) {
+	public PatientDTO( Integer id, String name, String email ) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.email = email;
 	}
 	
 	private Integer id;
 	
 	private String name;
+	
+	private String email;
 	
 } // public class PatientDTO implements Serializable 
