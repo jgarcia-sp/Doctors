@@ -15,15 +15,15 @@ public class PatientDTO implements Serializable {
 	
 	public PatientDTO( Integer id, String name, String email ) {
 		super();
-		this.patient_id = id;
-		this.patient_name = name;
-		this.patient_email = email;
+		this.id = id;
+		this.name = name;
+		this.email = email;
 	}
 	
-	private Integer patient_id;
+	private Integer id;
 	
-	private String patient_name;
+	private String name;
 	
-	private String patient_email;
+	private String email;
 	
 } // public class PatientDTO implements Serializable 

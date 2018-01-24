@@ -23,15 +23,15 @@ public class PatientModel implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private Integer patient_id;
+	private Integer id;
 	
 	@Column(nullable = false)
-	private String patient_name;
+	private String name;
 	
 	@Column(unique = true)
-	private String patient_email;
+	private String email;
 
-//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "patientId")
-//	private List<AppointmentModel> appointments = new ArrayList<>();
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "patient")
+	private List<AppointmentModel> appointments = new ArrayList<>();
 	
 } // public class Patient implements Serializable 

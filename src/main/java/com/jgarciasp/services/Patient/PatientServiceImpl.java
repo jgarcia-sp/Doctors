@@ -39,7 +39,7 @@ public class PatientServiceImpl implements PatientService {
 	}
 	
 	@Override
-	public PatientDTO findByPatientId ( Integer patientId ) {
+	public PatientDTO findById ( Integer patientId ) {
 		return dozer.map(patientDAO.findOne(patientId), PatientDTO.class);
 	}
 
@@ -50,7 +50,7 @@ public class PatientServiceImpl implements PatientService {
 
 	@Override
 	public void update(PatientDTO patient) {
-		PatientModel existingPatient = this.patientDAO.findOne(patient.getPatient_id());
+		PatientModel existingPatient = this.patientDAO.findOne(patient.getId());
 		this.utilService.copyNonNullProperties(dozer.map(patient, PatientModel.class), existingPatient);
 		patientDAO.save(existingPatient);
 	}

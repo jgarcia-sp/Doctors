@@ -20,7 +20,7 @@ public class AppointmentModel implements Serializable {
 	
 	@Id
 	@GeneratedValue
-	private Integer appointmentId;
+	private Integer id;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	private PatientModel patient;

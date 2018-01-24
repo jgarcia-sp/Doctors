@@ -10,7 +10,7 @@ public interface PatientService {
 	
 	public List<PatientDTO> findAll( Integer page, Integer size );
 	
-	public PatientDTO findByPatientId( Integer patientId );
+	public PatientDTO findById( Integer patientId );
 	
 	public PatientDTO create( PatientDTO patient );
 	

@@ -15,7 +15,7 @@ import com.jgarciasp.DTOs.PatientDTO;
 import com.jgarciasp.services.Patient.PatientServiceImpl;
 
 @RestController
-@RequestMapping(value = "/patient")
+@RequestMapping(value = "/api/patient")
 public class PatientController {
 	
 	@Autowired
@@ -32,7 +32,7 @@ public class PatientController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public PatientDTO findOne(@PathVariable("id") Integer patientId) {
 		log.info(String.format("Recuperando al paciente con id %s", patientId));
-		return patientService.findByPatientId(patientId);
+		return patientService.findById(patientId);
 	}
 	
 	@RequestMapping(method = { RequestMethod.POST })
@@ -44,7 +44,7 @@ public class PatientController {
 	@RequestMapping(value = "/{id}", method = { RequestMethod.PUT })
 	public void update(@PathVariable("id") Integer patientId, @RequestBody PatientDTO patient) {
 		log.info(String.format("Modificando al paciente: %s", patient));
-		patient.setPatient_id(patientId);
+		patient.setId(patientId);
 		patientService.update(patient);
 	}
 	
