@@ -1,0 +1,14 @@
+- Quitar los verbos de la ruta REST (Eliminar el create, delete, etc)
+
+- Pon el /API antes de los CRUDs (/API/Patient, etc.)
+
+probar que no hay citas duplicadas
+Probar requisitos de citas (No mas de 3 citas por pacientes, no mas de 20 citas al dia, etc)
+
+Hacer las excepciones
+
+Pon las interfaces y las implementaciones de los servicios en una carpeta para cada Entidad (Paciente, Cita, Consulta, etc.)
+
+Copiar src/main para src/test para hacer la estructura de los tests
+
+Mira el APIAdvice en otro proyecto

@@ -1,4 +1,4 @@
-package com.jgarciasp.services;
+package com.jgarciasp.services.Patient;
 
 import java.util.List;
 
@@ -10,12 +10,12 @@ public interface PatientService {
 	
 	public List<PatientDTO> findAll( Integer page, Integer size );
 	
-	public PatientDTO findByPatient_Id( Integer patient_id );
+	public PatientDTO findByPatientId( Integer patientId );
 	
 	public PatientDTO create( PatientDTO patient );
 	
 	public void update ( PatientDTO patient );
 	
-	public void delete ( Integer patient_id );
+	public void delete ( Integer patientId );
 
 } // public interface PatientService 

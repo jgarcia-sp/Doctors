@@ -1,4 +1,4 @@
-package com.jgarciasp.services;
+package com.jgarciasp.services.Patient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.jgarciasp.DAOs.PatientDAO;
 import com.jgarciasp.DTOs.PatientDTO;
 import com.jgarciasp.models.PatientModel;
+import com.jgarciasp.services.UtilService;
 
 @Service
 public class PatientServiceImpl implements PatientService {
@@ -19,6 +20,9 @@ public class PatientServiceImpl implements PatientService {
 	
 	@Autowired
 	private DozerBeanMapper dozer;
+	
+	@Autowired
+	private UtilService utilService;
 	
 	@Override
 	public List<PatientDTO> findAll() {
@@ -35,8 +39,8 @@ public class PatientServiceImpl implements PatientService {
 	}
 	
 	@Override
-	public PatientDTO findByPatient_Id ( Integer patient_id ) {
-		return dozer.map(patientDAO.findOne(patient_id), PatientDTO.class);
+	public PatientDTO findByPatientId ( Integer patientId ) {
+		return dozer.map(patientDAO.findOne(patientId), PatientDTO.class);
 	}
 
 	@Override
@@ -46,12 +50,14 @@ public class PatientServiceImpl implements PatientService {
 
 	@Override
 	public void update(PatientDTO patient) {
-		patientDAO.save(dozer.map(patient, PatientModel.class));
+		PatientModel existingPatient = this.patientDAO.findOne(patient.getPatient_id());
+		this.utilService.copyNonNullProperties(dozer.map(patient, PatientModel.class), existingPatient);
+		patientDAO.save(existingPatient);
 	}
 
 	@Override
-	public void delete(Integer patient_id) {
-		patientDAO.delete(patient_id);
+	public void delete(Integer patientId) {
+		patientDAO.delete(patientId);
 	}
 	
 } // public class PatientServiceImpl implements PatientService

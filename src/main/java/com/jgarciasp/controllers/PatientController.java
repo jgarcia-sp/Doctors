@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jgarciasp.DTOs.PatientDTO;
-import com.jgarciasp.services.PatientServiceImpl;
+import com.jgarciasp.services.Patient.PatientServiceImpl;
 
 @RestController
 @RequestMapping(value = "/patient")
@@ -30,28 +30,28 @@ public class PatientController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public PatientDTO findOne(@PathVariable("id") Integer patient_id) {
-		log.info(String.format("Recuperando al paciente con id %s", patient_id));
-		return patientService.findByPatient_Id(patient_id);
+	public PatientDTO findOne(@PathVariable("id") Integer patientId) {
+		log.info(String.format("Recuperando al paciente con id %s", patientId));
+		return patientService.findByPatientId(patientId);
 	}
 	
-	@RequestMapping(value = "/create", method = { RequestMethod.POST })
+	@RequestMapping(method = { RequestMethod.POST })
 	public PatientDTO create(@RequestBody PatientDTO patient) {
 		log.info(String.format("Creando al paciente: %s", patient));
 		return patientService.create(patient);
 	}
 	
-	@RequestMapping(value = "/update/{id}", method = { RequestMethod.PUT })
-	public void update(@PathVariable("id") Integer patient_id, @RequestBody PatientDTO patient) {
+	@RequestMapping(value = "/{id}", method = { RequestMethod.PUT })
+	public void update(@PathVariable("id") Integer patientId, @RequestBody PatientDTO patient) {
 		log.info(String.format("Modificando al paciente: %s", patient));
-		patient.setPatient_id(patient_id);
+		patient.setPatient_id(patientId);
 		patientService.update(patient);
 	}
 	
-	@RequestMapping(value = "/delete/{id}", method = { RequestMethod.DELETE })
-	public void delete(@PathVariable("id") Integer patient_id) {
-		log.info(String.format("Eliminando al paciente con id %s", patient_id));
-		patientService.delete(patient_id);
+	@RequestMapping(value = "/{id}", method = { RequestMethod.DELETE })
+	public void delete(@PathVariable("id") Integer patientId) {
+		log.info(String.format("Eliminando al paciente con id %s", patientId));
+		patientService.delete(patientId);
 	}
 
 } // public class PatientController 

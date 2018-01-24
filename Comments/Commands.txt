@@ -18,7 +18,7 @@ http://localhost:8080/patient/1
 
 + URL to create a new patient called testPatient: (Using a POST Method)
 
-http://localhost:8080/patient/create
+http://localhost:8080/patient
 
 	- Add a Body in PostMan of type Raw with JSON formatting and put the following:
 
@@ -28,16 +28,16 @@ http://localhost:8080/patient/create
 
 + URL to update the data from patient with id = 1: (Using a PUT Method)
 
-http://localhost:8080/patient/update/1
+http://localhost:8080/patient
 
 	- Add a Body in PostMan of type Raw with JSON formatting and put the following:
 
-{"name":"testPatient","email":"testMail@test.com"}
+{"patient_id":"1","patient_name":"testPatient","patient_email":"testMail@test.com"}
 
 
 
 + URL to delete a patient instance with id = 1: (Using a DELETE Method)
 
-http://localhost:8080/patient/delete/1
+http://localhost:8080/patient/1
 
 
