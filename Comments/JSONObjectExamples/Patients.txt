@@ -1,0 +1,47 @@
+JSON objects to create new instances of patients:
+
+{"name": "Grace", "email": "Grace@test.com", "appointments": [2,3,6]}
+{"name": "Heidi", "email": "Heidi@test.com", "appointments": [1,4,7]}
+{"name": "Indiana", "email": "Indiana@test.com", "appointments": [4,5]}
+{"name": "Judy", "email": "Judy@test.com", "appointments": [2,4]}
+
+
+JSON objects to update the ids of the patients:
+THIS SHOULD NOT WORK!!!!!
+
+{"id": "2"}
+{"id": "3"}
+{"id": "4"}
+{"id": "5"}
+{"id": "6"}
+
+
+JSON objects to update the names of the patients:
+
+{"name": "NameUpdated1"}
+{"name": "NameUpdated2"}
+{"name": "NameUpdated3"}
+{"name": "NameUpdated4"}
+{"name": "NameUpdated5"}
+
+
+JSON objects to update the emails of the patients:
+
+{"email": "EmailUpdated1"}
+{"email": "EmailUpdated2"}
+{"email": "EmailUpdated3"}
+{"email": "EmailUpdated4"}
+{"email": "EmailUpdated5"}
+
+
+ JSON objects to update the list of appointments of the patients:
+ 
+ {"appointments": [1,3]}
+ {"appointments": [2,5]}
+ {"appointments": [6]}
+ {"appointments": [2,8]}
+ {"appointments": [1,4]}
+ 
+ 
+ 
+ 

@@ -1,0 +1,5 @@
+- Quitar los verbos de la ruta REST (Eliminar el create, delete, etc)
+
+- Pon el /API antes de los CRUDs (/API/Patient, etc.)
+
+- Pon las interfaces y las implementaciones de los servicios en una carpeta para cada Entidad (Paciente, Cita, Consulta, etc.)

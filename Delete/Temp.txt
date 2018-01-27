@@ -1,0 +1,4 @@
+dest.setId(src.getId());
+		dest.setName(src.getName());
+		dest.setEmail(src.getEmail());
+		dest.setAppointments(MapperUtil.collectIDs(src.getAppointments()));

@@ -18,6 +18,18 @@ public class AppointmentModel implements Serializable {
 
 	private static final long serialVersionUID = 6585590000135378197L;
 	
+	public AppointmentModel () {
+		super();
+	}
+	
+	public AppointmentModel ( Integer id, PatientModel patient ) {
+		
+		super ();
+		this.id = id;
+		this.patient = patient;
+		
+	}
+	
 	@Id
 	@GeneratedValue
 	private Integer id;

@@ -3,61 +3,91 @@ package com.jgarciasp.services.Patient;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import com.jgarciasp.DAOs.PatientDAO;
 import com.jgarciasp.DTOs.PatientDTO;
+import com.jgarciasp.mappers.dtomodelsmappers.patient.DTOModelPatientMapperImpl;
+import com.jgarciasp.models.AppointmentModel;
 import com.jgarciasp.models.PatientModel;
 import com.jgarciasp.services.UtilService;
+import com.jgarciasp.services.appointments.AppointmentService;
 
 @Service
 public class PatientServiceImpl implements PatientService {
 
+	public static final Integer ID_NOT_FOUND = 1;
+	
+	public static boolean isDefaultPatient ( PatientModel patient ) {
+		return patient.getId() == PatientServiceImpl.ID_NOT_FOUND;
+	}
+	
 	@Autowired
 	private PatientDAO patientDAO;
 	
 	@Autowired
-	private DozerBeanMapper dozer;
+	private UtilService utilService;
 	
 	@Autowired
-	private UtilService utilService;
+	private DTOModelPatientMapperImpl patientMapper;
+	
+	@Autowired
+	private AppointmentService appointmentService;
 	
 	@Override
 	public List<PatientDTO> findAll() {
 		List<PatientDTO> result = new ArrayList<PatientDTO>();
-		this.patientDAO.findAll().forEach( (p) -> result.add(dozer.map(p, PatientDTO.class)));
+		this.patientDAO.findAll().forEach( (p) -> result.add(this.patientMapper.map(p)));
 		return result;
 	}
 	
 	@Override
 	public List<PatientDTO> findAll( Integer page, Integer size ) {
 		List<PatientDTO> result = new ArrayList<PatientDTO>();
-		this.patientDAO.findAll().forEach( (p) -> result.add(dozer.map(p, PatientDTO.class)));
+		this.patientDAO.findAll().forEach( (p) -> result.add(this.patientMapper.map(p)));
 		return result;
 	}
 	
 	@Override
 	public PatientDTO findById ( Integer patientId ) {
-		return dozer.map(patientDAO.findOne(patientId), PatientDTO.class);
+		return this.patientMapper.map(this.findModelById(patientId));
 	}
 
+	@Override
+	public PatientModel findModelById ( Integer patientId ) {
+		
+		if ( !this.patientDAO.exists(patientId) ) {
+			patientId = PatientServiceImpl.ID_NOT_FOUND;
+		} // if ( !this.patientDAO.exists(patientId) ) 
+		return this.patientDAO.findOne(patientId);
+		
+	}
+	
 	@Override
 	public PatientDTO create(PatientDTO patient) {
-		return dozer.map(patientDAO.save(dozer.map(patient, PatientModel.class)), PatientDTO.class);
+		return this.patientMapper.map(this.patientDAO.save(this.patientMapper.map(patient, new PatientModel())));
 	}
 
 	@Override
-	public void update(PatientDTO patient) {
+	public void update( Integer patientId, PatientDTO patient) {
 		PatientModel existingPatient = this.patientDAO.findOne(patient.getId());
-		this.utilService.copyNonNullProperties(dozer.map(patient, PatientModel.class), existingPatient);
-		patientDAO.save(existingPatient);
+		this.utilService.copyNonNullProperties(this.patientMapper.map(patient), existingPatient);
+		this.patientDAO.save(existingPatient);
 	}
 
 	@Override
 	public void delete(Integer patientId) {
-		patientDAO.delete(patientId);
+		this.deletePatientAppointments(patientId);
+		this.patientDAO.delete(patientId);
+	}
+	
+	private void deletePatientAppointments ( Integer patientId ) {
+		final PatientModel patient = this.patientDAO.findOne(patientId);
+		for ( AppointmentModel appointment : patient.getAppointments() ) {
+			this.appointmentService.delete(appointment.getId());
+		}
 	}
 	
 } // public class PatientServiceImpl implements PatientService

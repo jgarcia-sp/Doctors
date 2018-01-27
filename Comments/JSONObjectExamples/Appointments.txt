@@ -1,0 +1,28 @@
+JSON objects to create new instances of appointments:
+
+{"patient": "3"}
+{"patient": "6"}
+{"patient": "2"}
+{"patient": "4"}
+{"patient": "7"}
+
+
+JSON objects to update the ids of the appointments:
+THIS SHOULD NOT WORK!!!!!
+
+{"id": "2"}
+{"id": "3"}
+{"id": "4"}
+{"id": "5"}
+{"id": "6"}
+
+
+JSON objects to update the ids of the patients:
+
+{"patient": "5"}
+
+
+ 
+ 
+ 
+ 

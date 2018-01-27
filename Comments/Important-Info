@@ -1,0 +1,8 @@
+Doctors-Price Rest external application:
+
+ec2-34-242-227-224.eu-west-1.compute.amazonaws.com
+
+
+
+When updating an object, destroy those fields which are not passed by the JSON. 
+If one of these fields is required, raise an exception 
