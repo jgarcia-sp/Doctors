@@ -20,5 +20,5 @@ public interface PatientService {
 	public void update ( Integer patientId, PatientDTO patient );
 	
 	public void delete ( Integer patientId );
-
+	
 } // public interface PatientService 

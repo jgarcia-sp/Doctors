@@ -1,4 +1,4 @@
-package com.jgarciasp.services.appointments;
+package com.jgarciasp.services.Appointment;
 
 import java.util.List;
 

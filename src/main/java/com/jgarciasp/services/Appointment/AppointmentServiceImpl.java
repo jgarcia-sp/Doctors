@@ -1,4 +1,4 @@
-package com.jgarciasp.services.appointments;
+package com.jgarciasp.services.Appointment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.jgarciasp.DAOs.AppointmentDAO;
 import com.jgarciasp.DTOs.AppointmentDTO;
-import com.jgarciasp.mappers.dtomodelsmappers.appointment.DTOModelAppointmentMapperImpl;
+import com.jgarciasp.mappers.dtomodelsmappers.appointment.DTOModelAppointmentMapper;
 import com.jgarciasp.models.AppointmentModel;
 import com.jgarciasp.services.UtilService;
 
@@ -25,7 +25,7 @@ public class AppointmentServiceImpl implements AppointmentService {
 	private AppointmentDAO appointmentDAO;
 	
 	@Autowired
-	private DTOModelAppointmentMapperImpl appointmentMapper;
+	private DTOModelAppointmentMapper appointmentMapper;
 	
 	@Autowired
 	private UtilService utilService;

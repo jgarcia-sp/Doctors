@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jgarciasp.models.AppointmentModel;
-import com.jgarciasp.services.appointments.AppointmentServiceImpl;
+import com.jgarciasp.services.Appointment.AppointmentServiceImpl;
 
 // This class contains useful functionality for the rest of the mappers
 

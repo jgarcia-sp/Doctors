@@ -1,0 +1,6 @@
+JSON objects to create new instances of patients:
+
+{"medic" : 2}
+{"medic" : 3}
+{"medic" : 4}
+{"medic" : 5}

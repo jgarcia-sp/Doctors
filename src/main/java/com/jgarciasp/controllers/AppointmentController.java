@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jgarciasp.DTOs.AppointmentDTO;
-import com.jgarciasp.services.appointments.AppointmentService;
+import com.jgarciasp.services.Appointment.AppointmentService;
 
 @RestController
 @RequestMapping(value = "/api/appointment")

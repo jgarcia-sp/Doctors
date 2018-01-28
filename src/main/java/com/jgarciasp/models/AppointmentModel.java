@@ -36,5 +36,8 @@ public class AppointmentModel implements Serializable {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	private PatientModel patient;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	private ConsultModel consult;
 
 } // public class AppointmentModel implements Serializable

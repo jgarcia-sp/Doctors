@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 
 import com.jgarciasp.DAOs.PatientDAO;
 import com.jgarciasp.DTOs.PatientDTO;
-import com.jgarciasp.mappers.dtomodelsmappers.patient.DTOModelPatientMapperImpl;
+import com.jgarciasp.mappers.dtomodelsmappers.patient.DTOModelPatientMapper;
 import com.jgarciasp.models.AppointmentModel;
 import com.jgarciasp.models.PatientModel;
 import com.jgarciasp.services.UtilService;
-import com.jgarciasp.services.appointments.AppointmentService;
+import com.jgarciasp.services.Appointment.AppointmentService;
 
 @Service
 public class PatientServiceImpl implements PatientService {
@@ -31,7 +31,7 @@ public class PatientServiceImpl implements PatientService {
 	private UtilService utilService;
 	
 	@Autowired
-	private DTOModelPatientMapperImpl patientMapper;
+	private DTOModelPatientMapper patientMapper;
 	
 	@Autowired
 	private AppointmentService appointmentService;
