@@ -1,0 +1,24 @@
+JSON objects to create new instances of clinics:
+
+{"name": "Good Place"}
+{"name": "Average Place"}
+{"name": "Bad Place"}
+
+
+JSON objects to update the ids of the clinics:
+THIS SHOULD NOT WORK!!!!!
+
+{"id": "2"}
+{"id": "3"}
+{"id": "4"}
+{"id": "5"}
+{"id": "6"}
+
+
+JSON objects to update the names of the clinics:
+
+{"name": "NameUpdated1"}
+{"name": "NameUpdated2"}
+{"name": "NameUpdated3"}
+{"name": "NameUpdated4"}
+{"name": "NameUpdated5"}

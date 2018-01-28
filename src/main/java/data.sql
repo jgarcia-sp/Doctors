@@ -17,13 +17,22 @@ INSERT INTO medic (name, email) VALUES ("Jekyll", "jekyll@test.com");
 INSERT INTO medic (name, email) VALUES ("Ramon y Cajal", "ramonycajal@test.com");
 INSERT INTO medic (name, email) VALUES ("Watson", "watson@test.com");
 
+DELETE FROM clinic;
+INSERT INTO clinic (name) VALUES ("Clinic Not Found");
+INSERT INTO clinic (name) VALUES ("Clinica Norte");
+INSERT INTO clinic (name) VALUES ("Clinica Sur");
+INSERT INTO clinic (name) VALUES ("Clinica Este");
+INSERT INTO clinic (name) VALUES ("Clinica Oeste");
+INSERT INTO clinic (name) VALUES ("Hospital");
+
 DELETE FROM room;
-INSERT INTO room (room_name) VALUES ("Rm001");
-INSERT INTO room (room_name) VALUES ("Rm002");
-INSERT INTO room (room_name) VALUES ("Rm003");
-INSERT INTO room (room_name) VALUES ("Rm101");
-INSERT INTO room (room_name) VALUES ("Rm102");
-INSERT INTO room (room_name) VALUES ("Rm103");
+INSERT INTO room (room_name, clinic_id) VALUES ("Room Not Found", 1);
+INSERT INTO room (room_name, clinic_id) VALUES ("Rm001", 4);
+INSERT INTO room (room_name, clinic_id) VALUES ("Rm002", 6);
+INSERT INTO room (room_name, clinic_id) VALUES ("Rm003", 3);
+INSERT INTO room (room_name, clinic_id) VALUES ("Rm101", 2);
+INSERT INTO room (room_name, clinic_id) VALUES ("Rm102", 5);
+INSERT INTO room (room_name, clinic_id) VALUES ("Rm103", 3);
 
 DELETE FROM consult;
 INSERT INTO consult (medic_id, room_id) VALUES (1, 1);
@@ -35,7 +44,7 @@ INSERT INTO consult (medic_id, room_id) VALUES (5, 2);
 INSERT INTO consult (medic_id, room_id) VALUES (3, 2);
 
 DELETE FROM appointment;
-INSERT INTO appointment (patient_id, consult_id) VALUES (1, 2);
+INSERT INTO appointment (patient_id, consult_id) VALUES (1, 1);
 INSERT INTO appointment (patient_id, consult_id) VALUES (3, 5);
 INSERT INTO appointment (patient_id, consult_id) VALUES (2, 3);
 INSERT INTO appointment (patient_id, consult_id) VALUES (5, 4);

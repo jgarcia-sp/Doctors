@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -25,6 +26,9 @@ public class RoomModel implements Serializable {
 	private Integer id;
 	
 	private String roomName;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	private ClinicModel clinic;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "room")
 	private List<ConsultModel> consults = new ArrayList<>();

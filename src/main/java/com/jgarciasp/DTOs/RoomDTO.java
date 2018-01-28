@@ -15,6 +15,8 @@ public class RoomDTO implements Serializable {
 	
 	private String roomName;
 	
+	private Integer clinic;
+	
 	private List<Integer> consults;
 	
 	public RoomDTO () {
@@ -22,10 +24,11 @@ public class RoomDTO implements Serializable {
 		this.consults = new ArrayList<>();
 	}
 	
-	public RoomDTO ( Integer id, String roomName, List<Integer> consults ) {
+	public RoomDTO ( Integer id, String roomName, Integer clinic, List<Integer> consults ) {
 		super();
 		this.id = id;
 		this.roomName = roomName;
+		this.clinic = clinic;
 		this.consults = consults;
 	} // public RoomDTO ( Integer id, String roomName, List<Integer> consults )
 	

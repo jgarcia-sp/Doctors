@@ -13,14 +13,17 @@ public class AppointmentDTO implements Serializable {
 	
 	private Integer patient;
 	
+	private Integer consult;
+	
 	public AppointmentDTO () {
 		super();
 	}
 	
-	public AppointmentDTO ( Integer id, Integer patient ) {
+	public AppointmentDTO ( Integer id, Integer patient, Integer consult ) {
 		super();
 		this.id = id;
 		this.patient = patient;
+		this.consult = consult;
 	}
 
-}
+} // public class AppointmentDTO implements Serializable

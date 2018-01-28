@@ -13,6 +13,10 @@ public class ConsultDTO implements Serializable {
 	
 	private Integer id;
 	
+	private Integer medic;
+	
+	private Integer room;
+	
 	private List<Integer> appointments;
 	
 	public ConsultDTO () {
@@ -20,9 +24,11 @@ public class ConsultDTO implements Serializable {
 		this.appointments = new ArrayList<>();
 	}
 	
-	public ConsultDTO ( Integer id, List<Integer> appointments ) {
+	public ConsultDTO ( Integer id, Integer medic, Integer room, List<Integer> appointments ) {
 		super();
 		this.id = id;
+		this.medic = medic;
+		this.room = room;
 		this.appointments = appointments;
 	}
 

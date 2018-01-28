@@ -10,8 +10,10 @@ import org.springframework.stereotype.Service;
 
 import com.jgarciasp.models.AppointmentModel;
 import com.jgarciasp.models.ConsultModel;
+import com.jgarciasp.models.RoomModel;
 import com.jgarciasp.services.Appointment.AppointmentService;
 import com.jgarciasp.services.Consult.ConsultService;
+import com.jgarciasp.services.Room.RoomService;
 
 // This class contains useful functionality for the rest of the mappers
 
@@ -25,15 +27,22 @@ public class MapperUtil {
 	private static ConsultService consultService;
 	
 	@Autowired
+	private static RoomService roomService;
+	
+	@Autowired
 	private AppointmentService appServiceBean;
 	
 	@Autowired
 	private ConsultService consultServiceBean;
 	
+	@Autowired
+	private RoomService roomServiceBean;
+	
 	@PostConstruct
 	public void init () {
 		MapperUtil.appointmentService = this.appServiceBean;
 		MapperUtil.consultService = this.consultServiceBean;
+		MapperUtil.roomService = this.roomServiceBean;
 	}
 	
 	// Collects the IDs from a list of models of appointments
@@ -77,6 +86,28 @@ public class MapperUtil {
 		List<ConsultModel> result = new ArrayList<>();
 		for ( Integer id : list ) {
 			result.add(MapperUtil.consultService.findModelById(id));
+		}
+		return result;
+		
+	}
+	
+	public static List<Integer> collectRoomIDs ( List<RoomModel> list ) {
+		
+		List<Integer> result = new ArrayList<>();
+		for ( RoomModel consult : list ) {
+			result.add(consult.getId());
+		}  
+		return result;
+		
+	}
+	
+	// Retrieves the list of AppointmentModels given by the list of their IDs
+	
+	public static List<RoomModel> retrieveRooms ( List<Integer> list ) {
+		
+		List<RoomModel> result = new ArrayList<>();
+		for ( Integer id : list ) {
+			result.add(MapperUtil.roomService.findModelById(id));
 		}
 		return result;
 		
