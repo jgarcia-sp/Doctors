@@ -1,0 +1,34 @@
+JSON objects to create new instances of medics:
+
+{"name": "Quitapenas", "email": "Quitapenas@test.com"}
+{"name": "Pupitas", "email": "Pupitas@test.com"}
+{"name": "Matasanos", "email": "Matasanos@test.com"}
+{"name": "Cucho", "email": "Cucho@test.com"}
+
+
+JSON objects to update the ids of the medics:
+THIS SHOULD NOT WORK!!!!!
+
+{"id": "2"}
+{"id": "3"}
+{"id": "4"}
+{"id": "5"}
+{"id": "6"}
+
+
+JSON objects to update the names of the medics:
+
+{"name": "NameUpdated1"}
+{"name": "NameUpdated2"}
+{"name": "NameUpdated3"}
+{"name": "NameUpdated4"}
+{"name": "NameUpdated5"}
+
+
+JSON objects to update the emails of the medics:
+
+{"email": "EmailUpdated1"}
+{"email": "EmailUpdated2"}
+{"email": "EmailUpdated3"}
+{"email": "EmailUpdated4"}
+{"email": "EmailUpdated5"}

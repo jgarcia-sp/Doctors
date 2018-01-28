@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.jgarciasp.DAOs.AppointmentDAO;
 import com.jgarciasp.DTOs.AppointmentDTO;
-import com.jgarciasp.mappers.dtomodelsmappers.appointment.DTOModelAppointmentMapper;
+import com.jgarciasp.mappers.dtomodelsmappers.Appointment.DTOModelAppointmentMapper;
 import com.jgarciasp.models.AppointmentModel;
 import com.jgarciasp.services.UtilService;
 

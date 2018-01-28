@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -24,9 +25,15 @@ public class ConsultModel implements Serializable {
 	@GeneratedValue
 	private Integer id;
 	
-	private Integer medic;
+	@ManyToOne(fetch = FetchType.LAZY)
+	private MedicModel medic;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "consult")
 	private List<AppointmentModel> appointments = new ArrayList<>();
+	
+	public ConsultModel () {
+		super();
+		this.appointments = new ArrayList<>();
+	}
 
 } // public class ConsultModel implements Serializable 

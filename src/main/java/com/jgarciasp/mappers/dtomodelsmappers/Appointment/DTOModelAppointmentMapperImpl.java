@@ -1,4 +1,4 @@
-package com.jgarciasp.mappers.dtomodelsmappers.appointment;
+package com.jgarciasp.mappers.dtomodelsmappers.Appointment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

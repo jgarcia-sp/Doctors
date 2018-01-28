@@ -1,4 +1,4 @@
-package com.jgarciasp.mappers.dtomodelsmappers.appointment;
+package com.jgarciasp.mappers.dtomodelsmappers.Appointment;
 
 import com.jgarciasp.DTOs.AppointmentDTO;
 import com.jgarciasp.models.AppointmentModel;

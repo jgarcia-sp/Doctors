@@ -9,6 +9,10 @@ public class AppointmentDTO implements Serializable {
 
 	private static final long serialVersionUID = 8997192786411882834L;
 	
+	private Integer id;
+	
+	private Integer patient;
+	
 	public AppointmentDTO () {
 		super();
 	}
@@ -18,9 +22,5 @@ public class AppointmentDTO implements Serializable {
 		this.id = id;
 		this.patient = patient;
 	}
-	
-	private Integer id;
-	
-	private Integer patient;
 
 }

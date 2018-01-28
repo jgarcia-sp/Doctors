@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.jgarciasp.DAOs.PatientDAO;
 import com.jgarciasp.DTOs.PatientDTO;
-import com.jgarciasp.mappers.dtomodelsmappers.patient.DTOModelPatientMapper;
+import com.jgarciasp.mappers.dtomodelsmappers.Patient.DTOModelPatientMapper;
 import com.jgarciasp.models.AppointmentModel;
 import com.jgarciasp.models.PatientModel;
 import com.jgarciasp.services.UtilService;
@@ -38,14 +38,14 @@ public class PatientServiceImpl implements PatientService {
 	
 	@Override
 	public List<PatientDTO> findAll() {
-		List<PatientDTO> result = new ArrayList<PatientDTO>();
+		List<PatientDTO> result = new ArrayList<>();
 		this.patientDAO.findAll().forEach( (p) -> result.add(this.patientMapper.map(p)));
 		return result;
 	}
 	
 	@Override
 	public List<PatientDTO> findAll( Integer page, Integer size ) {
-		List<PatientDTO> result = new ArrayList<PatientDTO>();
+		List<PatientDTO> result = new ArrayList<>();
 		this.patientDAO.findAll().forEach( (p) -> result.add(this.patientMapper.map(p)));
 		return result;
 	}

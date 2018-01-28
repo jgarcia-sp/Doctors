@@ -1,4 +1,4 @@
-package com.jgarciasp.mappers.dtomodelsmappers.consult;
+package com.jgarciasp.mappers.dtomodelsmappers.Consult;
 
 import com.jgarciasp.DTOs.ConsultDTO;
 import com.jgarciasp.models.ConsultModel;

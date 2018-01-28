@@ -18,6 +18,16 @@ public class AppointmentModel implements Serializable {
 
 	private static final long serialVersionUID = 6585590000135378197L;
 	
+	@Id
+	@GeneratedValue
+	private Integer id;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	private PatientModel patient;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	private ConsultModel consult;
+	
 	public AppointmentModel () {
 		super();
 	}
@@ -29,15 +39,5 @@ public class AppointmentModel implements Serializable {
 		this.patient = patient;
 		
 	}
-	
-	@Id
-	@GeneratedValue
-	private Integer id;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	private PatientModel patient;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	private ConsultModel consult;
 
 } // public class AppointmentModel implements Serializable

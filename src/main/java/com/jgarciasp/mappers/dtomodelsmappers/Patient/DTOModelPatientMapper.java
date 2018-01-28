@@ -1,4 +1,4 @@
-package com.jgarciasp.mappers.dtomodelsmappers.patient;
+package com.jgarciasp.mappers.dtomodelsmappers.Patient;
 
 import com.jgarciasp.DTOs.PatientDTO;
 import com.jgarciasp.models.PatientModel;

@@ -1,4 +1,4 @@
-package com.jgarciasp.mappers.dtomodelsmappers.patient;
+package com.jgarciasp.mappers.dtomodelsmappers.Patient;
 
 import java.util.ArrayList;
 import java.util.List;

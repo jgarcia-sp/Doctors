@@ -34,4 +34,9 @@ public class PatientModel implements Serializable {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "patient")
 	private List<AppointmentModel> appointments = new ArrayList<>();
 	
+	public PatientModel () {
+		super();
+		this.appointments = new ArrayList<>();
+	}
+	
 } // public class Patient implements Serializable 

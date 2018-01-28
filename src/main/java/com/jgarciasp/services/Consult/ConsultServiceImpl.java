@@ -8,9 +8,11 @@ import org.springframework.stereotype.Service;
 
 import com.jgarciasp.DAOs.ConsultDAO;
 import com.jgarciasp.DTOs.ConsultDTO;
-import com.jgarciasp.mappers.dtomodelsmappers.consult.DTOModelConsultMapper;
+import com.jgarciasp.mappers.dtomodelsmappers.Consult.DTOModelConsultMapper;
+import com.jgarciasp.models.AppointmentModel;
 import com.jgarciasp.models.ConsultModel;
 import com.jgarciasp.services.UtilService;
+import com.jgarciasp.services.Appointment.AppointmentService;
 
 @Service
 public class ConsultServiceImpl implements ConsultService {
@@ -25,6 +27,9 @@ public class ConsultServiceImpl implements ConsultService {
 	
 	@Autowired
 	private UtilService utilService;
+	
+	@Autowired
+	private AppointmentService appointmentService;
 	
 	@Override
 	public List<ConsultDTO> findAll() {
@@ -69,7 +74,15 @@ public class ConsultServiceImpl implements ConsultService {
 
 	@Override
 	public void delete(Integer consultId) {
+		this.deleteConsultAppointments(consultId);
 		this.consultDAO.delete(consultId);
+	}
+	
+	private void deleteConsultAppointments ( Integer consultId ) {
+		final ConsultModel consult = this.consultDAO.findOne(consultId);
+		for ( AppointmentModel appointment : consult.getAppointments() ) {
+			this.appointmentService.delete(appointment.getId());
+		}
 	}
 
 } // public class ConsultServiceImpl implements ConsultService 

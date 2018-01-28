@@ -1,4 +1,4 @@
-package com.jgarciasp.mappers.dtomodelsmappers.consult;
+package com.jgarciasp.mappers.dtomodelsmappers.Consult;
 
 import java.util.ArrayList;
 import java.util.List;
