@@ -1,8 +1,5 @@
 package com.jgarciasp.mappers.dtomodelsmappers.Consult;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.jgarciasp.DTOs.ConsultDTO;
@@ -22,17 +19,6 @@ public class DTOModelConsultMapperImpl implements DTOModelConsultMapper {
 		return this.map(dto, new ConsultModel());
 	}
 
-	// Checks if the list of appointments from an PatientDTO is null, and return an empty list if that's the case
-
-	private List<Integer> sanitizeAppointments ( ConsultDTO src ) {
-		List<Integer> result = src.getAppointments();
-		if ( result == null ) {
-			result = new ArrayList<>();
-		}
-		src.setAppointments(result);
-		return result;
-	}
-
 	@Override
 	public ConsultDTO map(ConsultModel src, ConsultDTO dest) {
 		dest.setId(src.getId());
@@ -42,7 +28,7 @@ public class DTOModelConsultMapperImpl implements DTOModelConsultMapper {
 
 	@Override
 	public ConsultModel map(ConsultDTO src, ConsultModel dest) {
-		dest.setAppointments(MapperUtil.retrieveAppointments(this.sanitizeAppointments(src)));
+		dest.setAppointments(MapperUtil.retrieveAppointments(src.getAppointments()));
 		return dest;
 	}
 

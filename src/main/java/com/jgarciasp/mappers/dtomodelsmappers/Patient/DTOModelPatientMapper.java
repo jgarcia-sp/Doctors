@@ -12,7 +12,8 @@ public interface DTOModelPatientMapper {
 	public PatientModel map ( PatientDTO src, PatientModel dest );
 	
 	public PatientDTO map ( PatientModel src, PatientDTO dest );
-}
+	
+} // public interface DTOModelPatientMapper 
 
 
 

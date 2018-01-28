@@ -28,6 +28,9 @@ public class ConsultModel implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private MedicModel medic;
 	
+	@ManyToOne(fetch = FetchType.LAZY)
+	private RoomModel room;
+	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "consult")
 	private List<AppointmentModel> appointments = new ArrayList<>();
 	

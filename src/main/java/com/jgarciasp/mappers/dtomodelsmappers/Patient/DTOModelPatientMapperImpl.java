@@ -1,8 +1,5 @@
 package com.jgarciasp.mappers.dtomodelsmappers.Patient;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.jgarciasp.DTOs.PatientDTO;
@@ -25,24 +22,13 @@ public class DTOModelPatientMapperImpl implements DTOModelPatientMapper {
 		return this.map(dto, new PatientModel());
 	}
 
-	// Checks if the list of appointments from an PatientDTO is null, and return an empty list if that's the case
-	
-	private List<Integer> sanitizeAppointments ( PatientDTO src ) {
-		List<Integer> result = src.getAppointments();
-		if ( result == null ) {
-			result = new ArrayList<>();
-		}
-		src.setAppointments(result);
-		return result;
-	}
-	
 	// Maps the PatientDTO directly into the PatientModel dest
 	
 	@Override
 	public PatientModel map(PatientDTO src, PatientModel dest) {
 		dest.setName(src.getName());
 		dest.setEmail(src.getEmail());
-		dest.setAppointments(MapperUtil.retrieveAppointments(this.sanitizeAppointments(src)));
+		dest.setAppointments(MapperUtil.retrieveAppointments(src.getAppointments()));
 		return dest;
 	}
 	
