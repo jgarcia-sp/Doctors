@@ -1,6 +1,7 @@
 package com.jgarciasp.DTOs;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import lombok.Data;
 
@@ -11,6 +12,8 @@ public class AppointmentDTO implements Serializable {
 	
 	private Integer id;
 	
+	private Date date;
+	
 	private Integer patient;
 	
 	private Integer consult;
@@ -19,9 +22,10 @@ public class AppointmentDTO implements Serializable {
 		super();
 	}
 	
-	public AppointmentDTO ( Integer id, Integer patient, Integer consult ) {
+	public AppointmentDTO ( Integer id, Date date, Integer patient, Integer consult ) {
 		super();
 		this.id = id;
+		this.date = date;
 		this.patient = patient;
 		this.consult = consult;
 	}

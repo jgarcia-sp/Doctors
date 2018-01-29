@@ -1,6 +1,7 @@
 package com.jgarciasp.models;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 
@@ -21,6 +24,10 @@ public class AppointmentModel implements Serializable {
 	@Id
 	@GeneratedValue
 	private Integer id;
+	
+	@JsonFormat
+    (shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
+	private Date date;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	private PatientModel patient;

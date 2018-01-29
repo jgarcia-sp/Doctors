@@ -30,7 +30,7 @@ public class MedicController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public MedicDTO findOne(@PathVariable("id") Integer medicId) {
+	public MedicDTO findOne(@PathVariable("id") String medicId) {
 		log.info(String.format("Recuperando al medico con id %s", medicId));
 		return this.medicService.findById(medicId);
 	}
@@ -42,14 +42,14 @@ public class MedicController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = { RequestMethod.PUT })
-	public void update(@PathVariable("id") Integer medicId, @RequestBody MedicDTO medic) {
+	public void update(@PathVariable("id") String medicId, @RequestBody MedicDTO medic) {
 		log.info(String.format("Modificando al medico: %s", medic));
 		medic.setId(medicId);
 		this.medicService.update(medicId, medic);
 	}
 	
 	@RequestMapping(value = "/{id}", method = { RequestMethod.DELETE })
-	public void delete(@PathVariable("id") Integer medicId) {
+	public void delete(@PathVariable("id") String medicId) {
 		log.info(String.format("Eliminando al medico con id %s", medicId));
 		this.medicService.delete(medicId);
 	}

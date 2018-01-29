@@ -10,12 +10,12 @@ INSERT INTO patient (name, email) VALUES ("Erin", "Erin@test.com");
 INSERT INTO patient (name, email) VALUES ("Frank", "Franks@test.com");
 
 DELETE FROM medic;
-INSERT INTO medic (name, email) VALUES ("Medic not found", "medic.not.found@test.com");
-INSERT INTO medic (name, email) VALUES ("Mercy", "Mercy@test.com");
-INSERT INTO medic (name, email) VALUES ("Lt. Morales", "lt.Morales@test.com");
-INSERT INTO medic (name, email) VALUES ("Jekyll", "jekyll@test.com");
-INSERT INTO medic (name, email) VALUES ("Ramon y Cajal", "ramonycajal@test.com");
-INSERT INTO medic (name, email) VALUES ("Watson", "watson@test.com");
+INSERT INTO medic (id, name, email) VALUES ("1", "Medic not found", "medic.not.found@test.com");
+INSERT INTO medic (id, name, email) VALUES ("2", "Mercy", "Mercy@test.com");
+INSERT INTO medic (id, name, email) VALUES ("3", "Lt. Morales", "lt.Morales@test.com");
+INSERT INTO medic (id, name, email) VALUES ("4", "Jekyll", "jekyll@test.com");
+INSERT INTO medic (id, name, email) VALUES ("5", "Ramon y Cajal", "ramonycajal@test.com");
+INSERT INTO medic (id, name, email) VALUES ("6", "Watson", "watson@test.com");
 
 DELETE FROM clinic;
 INSERT INTO clinic (name) VALUES ("Clinic Not Found");

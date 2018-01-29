@@ -2,6 +2,7 @@ package com.jgarciasp.DTOs;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import lombok.Data;
@@ -13,7 +14,9 @@ public class ConsultDTO implements Serializable {
 	
 	private Integer id;
 	
-	private Integer medic;
+	private Date date;
+	
+	private String medic;
 	
 	private Integer room;
 	
@@ -24,9 +27,10 @@ public class ConsultDTO implements Serializable {
 		this.appointments = new ArrayList<>();
 	}
 	
-	public ConsultDTO ( Integer id, Integer medic, Integer room, List<Integer> appointments ) {
+	public ConsultDTO ( Integer id, Date date, String medic, Integer room, List<Integer> appointments ) {
 		super();
 		this.id = id;
+		this.date = date;
 		this.medic = medic;
 		this.room = room;
 		this.appointments = appointments;

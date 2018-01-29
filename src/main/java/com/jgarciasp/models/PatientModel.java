@@ -28,7 +28,7 @@ public class PatientModel implements Serializable {
 	@Column(nullable = false)
 	private String name;
 	
-	@Column(unique = true)
+	@Column(unique = true, length = 100)
 	private String email;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "patient")

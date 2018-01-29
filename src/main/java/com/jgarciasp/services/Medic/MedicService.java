@@ -11,14 +11,14 @@ public interface MedicService {
 
 	public List<MedicDTO> findAll(  Integer page, Integer size );
 
-	public MedicDTO findById ( Integer medicId );
+	public MedicDTO findById ( String medicId );
 
-	public MedicModel findModelById ( Integer medicId );
+	public MedicModel findModelById ( String medicId );
 
 	public MedicDTO create ( MedicDTO medic );
 
-	public void update ( Integer medicId, MedicDTO medic );
+	public void update ( String medicId, MedicDTO medic );
 
-	public void delete ( Integer medicId );
+	public void delete ( String medicId );
 
 } // public interface MedicService 

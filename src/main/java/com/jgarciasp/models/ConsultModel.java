@@ -2,6 +2,7 @@ package com.jgarciasp.models;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -11,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 
@@ -30,6 +33,10 @@ public class ConsultModel implements Serializable {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	private RoomModel room;
+	
+	@JsonFormat
+    (shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
+	private Date date;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "consult")
 	private List<AppointmentModel> appointments = new ArrayList<>();

@@ -11,7 +11,7 @@ public class MedicDTO implements Serializable {
 
 	private static final long serialVersionUID = -4006073956951422065L;
 
-	private Integer id;
+	private String id;
 	
 	private String name;
 	
@@ -24,7 +24,7 @@ public class MedicDTO implements Serializable {
 		this.consults = new ArrayList<>();
 	}
 	
-	public MedicDTO ( Integer id, String name, String email, List<Integer> consults ) {
+	public MedicDTO ( String id, String name, String email, List<Integer> consults ) {
 		super();
 		this.id = id;
 		this.name = name;

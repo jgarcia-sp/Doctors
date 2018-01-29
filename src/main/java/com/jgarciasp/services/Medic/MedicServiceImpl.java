@@ -18,7 +18,7 @@ import com.jgarciasp.services.Medic.MedicServiceImpl;
 @Service
 public class MedicServiceImpl implements MedicService {
 
-	public static final Integer ID_NOT_FOUND = 1;
+	public static final String ID_NOT_FOUND = "1";
 
 	public static boolean isDefaultMedic ( MedicModel medic ) {
 		return medic.getId() == MedicServiceImpl.ID_NOT_FOUND;
@@ -51,12 +51,12 @@ public class MedicServiceImpl implements MedicService {
 	}
 
 	@Override
-	public MedicDTO findById ( Integer medicId ) {
+	public MedicDTO findById ( String medicId ) {
 		return this.medicMapper.map(this.findModelById(medicId));
 	}
 
 	@Override
-	public MedicModel findModelById ( Integer medicId ) {
+	public MedicModel findModelById ( String medicId ) {
 		
 		if ( !this.medicDAO.exists(medicId) ) {
 			medicId = MedicServiceImpl.ID_NOT_FOUND;
@@ -71,19 +71,19 @@ public class MedicServiceImpl implements MedicService {
 	}
 
 	@Override
-	public void update( Integer medicId, MedicDTO medic) {
+	public void update( String medicId, MedicDTO medic) {
 		MedicModel existingMedic = this.medicDAO.findOne(medic.getId());
 		this.utilService.copyNonNullProperties(this.medicMapper.map(medic), existingMedic);
 		this.medicDAO.save(existingMedic);
 	}
 
 	@Override
-	public void delete(Integer medicId) {
+	public void delete(String medicId) {
 		this.deleteMedicConsults(medicId);
 		this.medicDAO.delete(medicId);
 	}
 	
-	private void deleteMedicConsults ( Integer medicId ) {
+	private void deleteMedicConsults ( String medicId ) {
 		final MedicModel medic = this.medicDAO.findOne(medicId);
 		for ( ConsultModel consult : medic.getConsults() ) {
 			this.consultService.delete(consult.getId());
